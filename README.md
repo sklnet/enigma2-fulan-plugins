@@ -1,4 +1,4 @@
-sh4-plugins
+enigma2-fulan-plugins
 ===================
 
-required sh4 e2 plugins
+required fulan e2 plugins
