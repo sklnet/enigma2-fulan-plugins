@@ -10,12 +10,12 @@ from Components.ConfigList import ConfigList
 from Components.config import config, configfile, ConfigSubsection, getConfigListEntry, ConfigSelection
 from Components.ConfigList import ConfigListScreen
 
-from boxbranding import getMachineBuild
+from Tools.HardwareInfo import HardwareInfo
 
 import Screens.Standby
 
 config.plugins.booster = ConfigSubsection()
-if getMachineBuild() in ("spark"):
+if if HardwareInfo().get_device_model() in ("spark"):
 	config.plugins.booster.startfrequenz = ConfigSelection(default = "3841", choices = [('3841',_("450 (default)")),('12803',"500"),('4609',"550"),('5121',"600"),('16643',"650"),('17923',"700")])
 	config.plugins.booster.normalfrequenz = ConfigSelection(default = "3841", choices = [('3841',_("450 (default)")),('12803',"500"),('4609',"550"),('5121',"600"),('16643',"650"),('17923',"700")])
 	config.plugins.booster.standbyfrequenz = ConfigSelection(default = "3841", choices = [('3841',_("450 (default)")),('2561',"300"),('5123',"200")])
